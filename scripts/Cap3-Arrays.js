@@ -112,7 +112,23 @@
 
 
 
+const people = [
+  
+  { name: 'Alice', age: 21 },
+  { name: 'Bob', age: 25 },
+  { name: 'Alice', age: 30 }
+];
 
+const groupedByName = people.reduce((accumulator, currentValue) => {
+  const name = currentValue.name;
+  console.log(accumulator)
+  console.log(!accumulator[name])
+  if (accumulator[name]) {
 
-let numbers = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
-numbers.forEach(x => console.log(x % 2 ===0))
+    accumulator[name] = [];
+    
+  }
+  accumulator[name].push(currentValue);
+  return accumulator;
+}, {});
+
