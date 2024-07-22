@@ -73,14 +73,13 @@
 
 // document.write( averageTemp)
 
-<<<<<<< HEAD
 // const matrix3x3 = [];
-=======
+
 {
   /*
        Matrix multidimensional
   // const matrix3x3 = [];
->>>>>>> 8b207f4f751081859f9c3ca7675351d453718541
+
 // for (let i = 0; i < 3; i++) {
 //   matrix3x3[i] = [];
 
@@ -97,7 +96,7 @@
 //     for (let z = 0; z < matrix3x3[i][j].length; z++) {}
 //   }
 // }
-<<<<<<< HEAD
+
 
 let numbers = [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
@@ -105,7 +104,7 @@ let iterator = numbers.keys();
 
 for (const n of iterator) {
   console.log(n);
-=======
+
   
   */
 }
@@ -121,28 +120,21 @@ for (const n of iterator) {
 
   console.log('Numbers:' ,numbers)
   */
->>>>>>> 8b207f4f751081859f9c3ca7675351d453718541
 }
 
-
-
 const people = [
-  
-  { name: 'Alice', age: 21 },
-  { name: 'Bob', age: 25 },
-  { name: 'Alice', age: 30 }
+  { name: "Alice", age: 21 },
+  { name: "Bob", age: 25 },
+  { name: "Alice", age: 30 },
 ];
 
 const groupedByName = people.reduce((accumulator, currentValue) => {
   const name = currentValue.name;
-  console.log(accumulator)
-  console.log(!accumulator[name])
+  console.log(accumulator);
+  console.log(!accumulator[name]);
   if (accumulator[name]) {
-
     accumulator[name] = [];
-    
   }
   accumulator[name].push(currentValue);
   return accumulator;
 }, {});
-
