@@ -73,20 +73,28 @@
 
 // document.write( averageTemp)
 
-const matrix3x3 = [];
-for (let i = 0; i < 3; i++) {
-  matrix3x3[i] = [];
+// const matrix3x3 = [];
+// for (let i = 0; i < 3; i++) {
+//   matrix3x3[i] = [];
 
-  for (let j = 0; j < 3; j++) {
-    matrix3x3[i][j] = [];
-    for (let z = 0; z < 3; z++) {
-      matrix3x3[i][j][z] = i + j + z;
-    }
-  }
-}
-console.log(matrix3x3[0][0][1]);
-for (let i = 0; i < matrix3x3.length; i++) {
-  for (let j = 0; j < matrix3x3[i].length; j++) {
-    for (let z = 0; z < matrix3x3[i][j].length; z++) {}
-  }
+//   for (let j = 0; j < 3; j++) {
+//     matrix3x3[i][j] = [];
+//     for (let z = 0; z < 3; z++) {
+//       matrix3x3[i][j][z] = i + j + z;
+//     }
+//   }
+// }
+// console.log(matrix3x3[0][0][1]);
+// for (let i = 0; i < matrix3x3.length; i++) {
+//   for (let j = 0; j < matrix3x3[i].length; j++) {
+//     for (let z = 0; z < matrix3x3[i][j].length; z++) {}
+//   }
+// }
+
+let numbers = [-4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+let iterator = numbers.keys();
+
+for (const n of iterator) {
+  console.log(n);
 }
