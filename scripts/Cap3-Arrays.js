@@ -122,19 +122,7 @@ for (const n of iterator) {
   */
 }
 
-const people = [
-  { name: "Alice", age: 21 },
-  { name: "Bob", age: 25 },
-  { name: "Alice", age: 30 },
-];
-
-const groupedByName = people.reduce((accumulator, currentValue) => {
-  const name = currentValue.name;
-  console.log(accumulator);
-  console.log(!accumulator[name]);
-  if (accumulator[name]) {
-    accumulator[name] = [];
-  }
-  accumulator[name].push(currentValue);
-  return accumulator;
-}, {});
+let numbers = Array.of(1, 2, 3, 4, 5, 6);
+let numbers02 = Array.of(...numbers);
+console.log("Array 1", numbers);
+console.log("Array 2", numbers02);
