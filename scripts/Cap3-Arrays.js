@@ -123,6 +123,5 @@ for (const n of iterator) {
 }
 
 let numbers = Array.of(1, 2, 3, 4, 5, 6);
-let numbers02 = Array.of(...numbers);
+numbers.copyWithin(1, 2, 4);
 console.log("Array 1", numbers);
-console.log("Array 2", numbers02);
