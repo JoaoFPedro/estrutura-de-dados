@@ -122,6 +122,24 @@ for (const n of iterator) {
   */
 }
 
-let numbers = Array.of(1, 2, 3, 4, 5, 6);
-numbers.copyWithin(1, 2, 4);
-console.log("Array 1", numbers);
+// let numbers = Array.of(1, 2, 3, 4, 5, 6);
+// numbers.copyWithin(0, 2, 3);
+// console.log("Array 1", numbers);
+
+let numbers = Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+numbers.reverse();
+
+console.log("numbers", numbers);
+
+// numbers.sort((a, b) => a - b);
+function compare(a, b) {
+  if (a < b) {
+    return -1;
+  }
+  if (a > b) {
+    return 1;
+  } else return 0;
+}
+numbers.sort(compare);
+
+console.log("numbers", numbers);
