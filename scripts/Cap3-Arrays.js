@@ -126,20 +126,63 @@ for (const n of iterator) {
 // numbers.copyWithin(0, 2, 3);
 // console.log("Array 1", numbers);
 
+// let numbers = Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+// numbers.reverse();
+
+// console.log("numbers", numbers);
+
+// // numbers.sort((a, b) => a - b);
+// function compare(a, b) {
+//   if (a < b) {
+//     return -1;
+//   }
+//   if (a > b) {
+//     return 1;
+//   } else return 0;
+// }
+// numbers.sort(compare);
+
+// console.log("numbers", numbers);
+
+
+// const friends = [
+//   { name: 'John', age: 30 },
+//   { name: 'Ana', age: 20 },
+//   { name: 'Chris', age: 25 }, 
+// ];
+
+// friends.sort((a,b) => a.age-b.age)
+
+
+
+// function compare(a,b){
+//   if(a.age < b.age){
+//     return - 1
+//   }
+//   if(a.age > b.age){
+//     return 1
+//   }
+//   else 
+//   return 0 
+// }
+// friends.sort(compare)
+// console.log(friends)
+
+// let names = ['Ana', 'ana', 'john', 'John'];
+
+// names.sort((a,b) => a.localeCompare(b))
+
+// console.log(names)
+
 let numbers = Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
-numbers.reverse();
 
-console.log("numbers", numbers);
+numbers.indexOf(10)
+let numberIndex = numbers.indexOf(10)
+let numberLastIndex = numbers.lastIndexOf(9)
 
-// numbers.sort((a, b) => a - b);
-function compare(a, b) {
-  if (a < b) {
-    return -1;
-  }
-  if (a > b) {
-    return 1;
-  } else return 0;
-}
-numbers.sort(compare);
+console.log(numberIndex)
+console.log(numberLastIndex)
 
-console.log("numbers", numbers);
+numbers.push(10)
+
+console.log(numbers)
