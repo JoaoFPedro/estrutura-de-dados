@@ -174,15 +174,30 @@ for (const n of iterator) {
 
 // console.log(names)
 
+// let numbers = Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+
+// numbers.indexOf(10)
+// let numberIndex = numbers.indexOf(10)
+// let numberLastIndex = numbers.lastIndexOf(9)
+
+// console.log(numberIndex)
+// console.log(numberLastIndex)
+
+// numbers.push(10)
+
+// console.log(numbers)
+
+// let numbers = Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+
+// function mult13(element, index, array){
+//   return (element % 13 == 0)
+// }
+
+// console.log(numbers.find(mult13))
+// console.log(numbers.findIndex(mult13))
+
+
 let numbers = Array.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
 
-numbers.indexOf(10)
-let numberIndex = numbers.indexOf(10)
-let numberLastIndex = numbers.lastIndexOf(9)
-
-console.log(numberIndex)
-console.log(numberLastIndex)
-
-numbers.push(10)
-
-console.log(numbers)
+console.log(numbers.includes(15))
+console.log(numbers.includes(20))
