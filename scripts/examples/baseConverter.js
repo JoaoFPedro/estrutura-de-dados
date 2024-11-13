@@ -17,8 +17,7 @@ class Stack {
     }
 
     
-    
-}
+    }
 
 function baseConverter(decNumber, base) {
     const remStack = new Stack()
