@@ -17,6 +17,13 @@
 
         return result
     }
+    peek(){
+        return this.items[this.lowestCount]
+    }
+    isEmpty(){
+        return this.count - this.lowestCount === 0
+        //return this.size()===0
+    }
 }  
 
 const queue = new Queue();
@@ -27,4 +34,6 @@ queue.enqueue('Jack');
 console.log(queue)
 
 queue.denqueue()
+
+console.log(queue.isEmpty())
 
