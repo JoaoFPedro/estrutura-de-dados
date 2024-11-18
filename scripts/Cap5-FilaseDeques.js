@@ -27,6 +27,11 @@
     size (){
         return this.count - this.lowestCount
     }
+    clear(){
+        this.items =  {}
+        this.lowestCount = 0
+        this.count = 0
+    }
 }  
 
 const queue = new Queue();
@@ -37,6 +42,6 @@ queue.enqueue('Jack');
 console.log(queue)
 
 queue.denqueue()
-
+queue.clear()
 console.log(queue.size())
 
