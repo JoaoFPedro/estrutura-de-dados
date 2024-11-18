@@ -24,6 +24,9 @@
         return this.count - this.lowestCount === 0
         //return this.size()===0
     }
+    size (){
+        return this.count - this.lowestCount
+    }
 }  
 
 const queue = new Queue();
@@ -35,5 +38,5 @@ console.log(queue)
 
 queue.denqueue()
 
-console.log(queue.isEmpty())
+console.log(queue.size())
 
