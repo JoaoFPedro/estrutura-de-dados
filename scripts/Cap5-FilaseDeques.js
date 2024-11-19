@@ -32,16 +32,24 @@
         this.lowestCount = 0
         this.count = 0
     }
+    toString(){
+        let objString = `${this.items[this.lowestCount]}`
+        for(let i = this.lowestCount + 1; i < this.count; i++){
+            objString = `${objString}, ${this.items[i]}`
+        }
+        return objString
+    }
 }  
 
 const queue = new Queue();
 
 queue.enqueue('John');
 queue.enqueue('Jack');
+queue.enqueue('Jennifer');
 
 console.log(queue)
 
-queue.denqueue()
-queue.clear()
-console.log(queue.size())
+
+
+console.log(queue.toString())
 
