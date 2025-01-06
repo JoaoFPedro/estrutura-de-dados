@@ -39,8 +39,9 @@ class LinkedList {
   }
   removeAt(index) {
     if (index >= 0 && index < this.count) {
+      let current = this.head;
       if (index === 0) {
-        this.head = this.head.next;
+        this.head = current.next;
       } else {
         const previous = this.getElementAt(index - 1);
         current = previous.next;
@@ -53,11 +54,11 @@ class LinkedList {
   }
   getElementAt(index) {
     if (index >= 0 && index <= this.count) {
-      let node = this.head;
-      for (let i = 0; i < index && node != null; i++) {
-        node = node.next;
+      let current = this.head;
+      for (let i = 0; i < index && current != null; i++) {
+        current = current.next;
       }
-      return node;
+      return current;
     }
     return undefined;
   }
