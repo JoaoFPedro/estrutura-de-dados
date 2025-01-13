@@ -76,6 +76,12 @@ class LinkedList {
     const index = this.indexOf(element);
     return this.removeAt(index);
   }
+  isEmpty() {
+    return this.size() === 0;
+  }
+  size() {
+    return this.count;
+  }
 }
 const list = new LinkedList();
 
