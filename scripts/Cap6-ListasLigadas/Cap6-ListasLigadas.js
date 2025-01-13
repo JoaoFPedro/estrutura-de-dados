@@ -85,6 +85,18 @@ class LinkedList {
   getHead() {
     return this.head;
   }
+  toString() {
+    if (this.head == null) {
+      return "";
+    }
+    let objString = `${this.head.element}`;
+    let current = this.head.next;
+    for (let i = 1; i < this.size() && current != null; i++) {
+      objString = `${objString},${current.element}`;
+      current = current.next;
+    }
+    return objString;
+  }
 }
 const list = new LinkedList();
 
