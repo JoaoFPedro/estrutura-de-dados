@@ -82,6 +82,9 @@ class LinkedList {
   size() {
     return this.count;
   }
+  getHead() {
+    return this.head;
+  }
 }
 const list = new LinkedList();
 
