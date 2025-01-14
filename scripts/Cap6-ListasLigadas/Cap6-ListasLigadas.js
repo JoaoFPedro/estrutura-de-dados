@@ -103,3 +103,25 @@ const list = new LinkedList();
 list.push(15);
 list.push(7);
 list.push(22);
+
+//Lista duplamente ligadas
+
+class DoublyLinkedList extends LinkedList {
+  constructor(equalsFn = defaultEquals) {
+    super(equalsFn);
+    this.tail = undefined;
+  }
+  push(element) {
+    const node = new DoublyNode(element);
+    if (this.head == null) {
+      this.head = node;
+      this.tail = node; // NEW
+    } else {
+      // attach to the tail node // NEW
+      this.tail.next = node;
+      node.prev = this.tail;
+      this.tail = node;
+    }
+    this.count++;
+  }
+}
