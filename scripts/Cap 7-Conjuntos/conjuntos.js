@@ -23,6 +23,9 @@ class Set {
   clear() {
     this.items = {};
   }
+  size() {
+    return Object.keys(this.items).length;
+  }
 }
 const conj = new Set();
 console.log(conj.hasElement());
