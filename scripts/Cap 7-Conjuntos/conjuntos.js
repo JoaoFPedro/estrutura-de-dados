@@ -3,8 +3,8 @@ class Set {
     this.items = {};
   }
   hasElement(element) {
-    return element in this.items; // Aqui verifica se a cadeia de objetos tem a propriedade
-    //  return Object.prototype.hasOwnProperty.call(this.items, element); Aqui verifica se o objeto tem a propriedade especificada
+    // return element in this.items; // Aqui verifica se a cadeia de objetos tem a propriedade
+    return Object.prototype.hasOwnProperty.call(this.items, element); //Aqui verifica se o objeto tem a propriedade especificada
   }
   addElement(element) {
     if (!this.hasElement(element)) {
@@ -20,6 +20,9 @@ class Set {
     }
     return false;
   }
+  clear() {
+    this.items = {};
+  }
 }
 const conj = new Set();
 console.log(conj.hasElement());
@@ -27,6 +30,10 @@ conj.addElement(2);
 console.log(conj);
 
 conj.addElement(4);
-conj.deleteElement(2);
+console.log(conj.hasElement(2));
+// conj.deleteElement(2);
 
-console.log("Alterado", conj);
+// console.log("Alterado", conj);
+
+// conj.clear();
+// console.log("After Clear method", conj);
