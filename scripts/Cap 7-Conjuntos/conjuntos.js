@@ -35,6 +35,23 @@ class Set {
     otherSet.values().forEach((value) => unionSet.add(value));
     return unionSet;
   }
+  intersection(otherSet) {
+    const intersectionSet = new Set();
+    const values = this.values();
+    const otherValues = otherSet.values();
+    let biggerSet = values;
+    let smallerSet = otherValues;
+    if (otherValues.length - values.length > 0) {
+      biggerSet = otherValues;
+      smallerSet = values;
+    }
+    smallerSet.forEach((value) => {
+      if (biggerSet.includes(value)) {
+        intersectionSet.add(value);
+      }
+    });
+    return intersectionSet;
+  }
 }
 // const conj = new Set();
 // console.log(conj.hasElement());
