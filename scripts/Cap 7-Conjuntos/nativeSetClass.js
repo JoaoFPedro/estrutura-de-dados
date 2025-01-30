@@ -4,9 +4,9 @@ setA.add(2);
 setA.add(3);
 
 const setB = new Set();
+setB.add(2);
+setB.add(3);
 setB.add(4);
-setB.add(5);
-setB.add(6);
 
 const union = (set1, set2) => {
   const unionAB = new Set();
@@ -16,4 +16,15 @@ const union = (set1, set2) => {
   return unionAB;
 };
 
-console.log(union(setA, setB));
+const intersection = (set1, set2) => {
+  const intersectionSet = new Set();
+  set1.forEach((value) => {
+    if (set2.has(value)) {
+      intersectionSet.add(value);
+    }
+  });
+  return intersectionSet;
+};
+
+console.log("Union", union(setA, setB));
+console.log("Intersecion", intersection(setA, setB));
