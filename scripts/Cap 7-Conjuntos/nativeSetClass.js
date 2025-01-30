@@ -25,6 +25,16 @@ const intersection = (set1, set2) => {
   });
   return intersectionSet;
 };
+const difference = (set1, set2) => {
+  const differenceSet = new Set();
+  set1.forEach((value) => {
+    if (!set2.has(value)) {
+      differenceSet.add(value);
+    }
+  });
+  return differenceSet;
+};
 
 console.log("Union", union(setA, setB));
 console.log("Intersecion", intersection(setA, setB));
+console.log("Difference", difference(setA, setB));
