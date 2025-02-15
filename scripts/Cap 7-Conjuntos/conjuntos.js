@@ -104,3 +104,32 @@ setB.addElement(6);
 const unionAB = setA.union(setB);
 
 console.log("UNIÃO**", unionAB);
+
+//Exemplos para post
+
+const A = new Set([1, 2, 3, 4]);
+const B = new Set([3, 4, 5, 6]);
+
+// União
+const union = new Set([...A, ...B]);
+console.log(union); // {1, 2, 3, 4, 5, 6}
+
+// Interseção
+const intersection = new Set([...A].filter((x) => B.has(x)));
+console.log(intersection); // {3, 4}
+
+// Diferença
+const difference = new Set([...A].filter((x) => !B.has(x)));
+
+console.log(difference); // {1, 2}
+
+const user1Friends = new Set(["Ana", "Carlos", "Pedro"]);
+
+const user2Friends = new Set(["Pedro", "Maria", "Carlos"]);
+
+// Interseção (amigos em comum)
+const mutualFriends = new Set(
+  [...user1Friends].filter((friend) => user2Friends.has(friend))
+);
+
+console.log(mutualFriends);
