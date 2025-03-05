@@ -34,6 +34,21 @@ class Dictionary {
     if (key !== null && value !== null) {
       const tableKey = this.toStrFn(key);
       this.table[tableKey] = new ValuePair(key, value);
+      return true;
+    }
+    return false;
+  }
+  removeKey(key) {
+    if (this.hasKey(key)) {
+      delete this.table[this.toStrFn(key)];
+      return true;
+    }
+    return false;
+  }
+  get(key) {
+    if (this.hasKey(key)) {
+      const getValue = this.table[this.toStrFn(key)];
+      return getValue != null ? getValue : null;
     }
   }
 }
@@ -42,4 +57,8 @@ class Dictionary {
 var dic = new Dictionary();
 console.log("dic", dic.hasKey(1)); // Deve retornar false, pois a chave 1 não foi adicionada ainda
 dic.set(1, "teste");
-console.log("TESTE****", dic);
+
+dic.set(0, "teste02");
+
+console.log("Allvalues**", dic);
+console.log("GETMETHOD**", dic.get(1));
