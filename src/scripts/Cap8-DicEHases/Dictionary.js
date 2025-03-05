@@ -48,8 +48,9 @@ class Dictionary {
   get(key) {
     if (this.hasKey(key)) {
       const getValue = this.table[this.toStrFn(key)];
-      return getValue != null ? getValue : null;
+      return getValue;
     }
+    return undefined;
   }
 }
 
