@@ -51,6 +51,15 @@ class HashTable {
 
     return valuePair == null ? undefined : valuePair;
   }
+  remove(key) {
+    if (key !== null) {
+      const hash = this.hashcode(key);
+      const valuePair = this.table[hash];
+      delete this.table[hash];
+      return true;
+    }
+    return false;
+  }
 }
 const hash = new HashTable();
 console.log("HASHPUT***", hash.put("Gandalf", "gandalf@gmail.com"));
@@ -58,3 +67,6 @@ console.log("HASHPUT***", hash.put("jones", "jonesPones@gmail.com"));
 
 console.log("HASH**", hash);
 console.log("HASHGET***", hash.get("Gandalf"));
+
+hash.remove("Gandalf");
+console.log("HASHAFTER****", hash);
