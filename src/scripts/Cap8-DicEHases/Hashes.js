@@ -1,5 +1,25 @@
+class ValuePair {
+  constructor(key, value) {
+    this.key = key;
+    this.value = value;
+  }
+
+  toString() {
+    return `[#${this.key}: ${this.value}]`;
+  }
+}
 class HashTable {
-  constructor(toStrFn = Dictionary.defaultToString) {
+  static defaultToString(item) {
+    if (item === null) {
+      return "NULL";
+    } else if (item === undefined) {
+      return "UNDEFINED";
+    } else if (typeof item === "string" || item instanceof String) {
+      return `${item}`;
+    }
+    return item.toString();
+  }
+  constructor(toStrFn = HashTable.defaultToString) {
     this.toStrFn = toStrFn; // Função de conversão de chave
     this.table = {}; // Inicialização da tabela hash
   }
@@ -15,6 +35,26 @@ class HashTable {
     return hash % 37;
   }
   hashcode(key) {
-    this.loseloseHashCode(key);
+    return this.loseloseHashCode(key);
+  }
+  put(key, value) {
+    if (key != null && value != null) {
+      const position = this.hashcode(key);
+      this.table[position] = new ValuePair(key, value);
+
+      return true;
+    }
+    return false;
+  }
+  get(key) {
+    const valuePair = this.table[this.hashcode(key)];
+
+    return valuePair == null ? undefined : valuePair;
   }
 }
+const hash = new HashTable();
+console.log("HASHPUT***", hash.put("Gandalf", "gandalf@gmail.com"));
+console.log("HASHPUT***", hash.put("jones", "jonesPones@gmail.com"));
+
+console.log("HASH**", hash);
+console.log("HASHGET***", hash.get("Gandalf"));
