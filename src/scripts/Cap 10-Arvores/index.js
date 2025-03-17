@@ -1,4 +1,4 @@
-class node {
+class Node {
   constructor(key) {
     this.key = key;
     this.left = null;
@@ -26,11 +26,13 @@ class BinarySearchTree {
     if (this.root === null) {
       this.root = new Node(key);
     } else {
+      console.log("THIS.ROOT:", this.root);
       this.insertNode(this.root, key);
     }
   }
   insertNode(node, key) {
     if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
+      console.log("lalalala", node.key);
       if (node.left === null) {
         node.left = new Node(key);
       } else {
@@ -44,4 +46,21 @@ class BinarySearchTree {
       }
     }
   }
+  inOrderTraverseNode(node, callback) {
+    if (node != null) {
+      this.inOrderTraverseNode(node.left, callback);
+      callback(node.key);
+      this.inOrderTraverseNode(node.right, callback);
+    }
+  }
+  inOrderTraverse(callback) {
+    this.inOrderTraverseNode(this.root, callback);
+  }
 }
+const tree = new BinarySearchTree();
+tree.insert(11);
+tree.insert(15);
+tree.insert(12);
+tree.insert(9);
+
+console.log("TREE:", tree);
