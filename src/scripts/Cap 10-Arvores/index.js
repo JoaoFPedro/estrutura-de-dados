@@ -147,14 +147,24 @@ class BinarySearchTree {
     return node;
   }
 }
-const tree = new BinarySearchTree();
-tree.insert(11);
-tree.insert(15);
-tree.insert(12);
-tree.insert(9);
+// const tree = new BinarySearchTree();
+// tree.insert(11);
+// tree.insert(15);
+// tree.insert(12);
+// tree.insert(9);
 
-console.log("TREE:", tree);
-const printNode = (value) => console.log(value);
-console.log("INORDER:", tree.inOrderTraverse(printNode));
-console.log("MINODE:", tree.min());
-console.log("MAXNODE:", tree.max());
+// console.log("TREE:", tree);
+// const printNode = (value) => console.log(value);
+// console.log("INORDER:", tree.inOrderTraverse(printNode));
+// console.log("MINODE:", tree.min());
+// console.log("MAXNODE:", tree.max());
+
+//Arvore de Adelson-Velskii e Landi (arvore AVL)
+
+class AVLTree extends BinarySearchTree {
+  constructor(compareFn = defaultCompare) {
+    super(compareFn);
+    this.compareFn = compareFn;
+    this.root = null;
+  }
+}
