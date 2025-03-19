@@ -161,10 +161,21 @@ class BinarySearchTree {
 
 //Arvore de Adelson-Velskii e Landi (arvore AVL)
 
+//AVL tree é uma arvore que se auto regula, uma tree que tenta se balanceear sempre que um nó é add, evitando ter + de 1 de diferença em qualquer nivel
+
 class AVLTree extends BinarySearchTree {
   constructor(compareFn = defaultCompare) {
     super(compareFn);
     this.compareFn = compareFn;
     this.root = null;
+  }
+  getNodeHeight(node) {
+    if (node == null) {
+      return -1;
+    }
+    return (
+      Math.max(this.getNodeHeight(node.left), this.getNodeHeight(node.right)) +
+      1
+    );
   }
 }
