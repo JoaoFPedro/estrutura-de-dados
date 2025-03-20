@@ -163,6 +163,13 @@ class BinarySearchTree {
 
 //AVL tree é uma arvore que se auto regula, uma tree que tenta se balanceear sempre que um nó é add, evitando ter + de 1 de diferença em qualquer nivel
 
+const BalanceFactor = {
+  UNBALANCED_RIGHT: 1,
+  SLIGHTLY_UNBALANCED_RIGHT: 2,
+  BALANCED: 3,
+  SLIGHTLY_UNBALANCED_LEFT: 4,
+  UNBALANCED_LEFT: 5,
+};
 class AVLTree extends BinarySearchTree {
   constructor(compareFn = defaultCompare) {
     super(compareFn);
@@ -177,5 +184,21 @@ class AVLTree extends BinarySearchTree {
       Math.max(this.getNodeHeight(node.left), this.getNodeHeight(node.right)) +
       1
     );
+  }
+  getBalanceFactor(node) {
+    const heightDifference =
+      this.getNodeHeight(node.left) - this.getNodeHeight(node.right);
+    switch (heightDifference) {
+      case -2:
+        return BalanceFactor.UNBALANCED_RIGHT;
+      case -1:
+        return BalanceFactor.SLIGHTLY_UNBALANCED_RIGHT;
+      case 1:
+        return BalanceFactor.SLIGHTLY_UNBALANCED_LEFT;
+      case 2:
+        return BalanceFactor.UNBALANCED_LEFT;
+      default:
+        return BalanceFactor.BALANCED;
+    }
   }
 }
