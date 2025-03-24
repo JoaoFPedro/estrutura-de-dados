@@ -39,4 +39,13 @@ export class Minheap {
   findMinimum() {
     return this.isEmpty() ? undefined : this.heap[0];
   }
+  insert(value) {
+    if (value != null) {
+      const index = this.heap.length;
+      this.heap.push(value);
+      this.siftUp(index);
+      return true;
+    }
+    return false;
+  }
 }
