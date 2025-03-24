@@ -27,4 +27,16 @@ export class Minheap {
     }
     return Math.floor((index - 1) / 2);
   }
+  size() {
+    return this.heap.length;
+  }
+  isEmpty() {
+    return this.size() <= 0;
+  }
+  clear() {
+    this.heap = [];
+  }
+  findMinimum() {
+    return this.isEmpty() ? undefined : this.heap[0];
+  }
 }
