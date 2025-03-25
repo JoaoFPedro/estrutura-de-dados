@@ -110,3 +110,10 @@ export class MinHeap {
     return this.heap;
   }
 }
+export class MaxHeap extends MinHeap {
+  constructor(compareFn = defaultCompare) {
+    super(compareFn);
+    this.compareFn = compareFn;
+    this.compareFn = reverseCompare(compareFn);
+  }
+}
